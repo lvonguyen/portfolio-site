@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@theme {
+  --color-t100: #E7E7E6;
+  --color-t200: #CFCBBF;
+  --color-t300: #B8B19C;
+  --color-t400: #4E4A3E;
+  --color-t500: #1F2822;
+  --color-y100: #F5D288;
+
+  --color-background: #E7E7E6;
+  --color-surface: #CFCBBF;
+  --color-foreground: #1F2822;
+  --color-muted: #4E4A3E;
+  --color-border: #B8B19C;
+  --color-accent: #F5D288;
+
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: theme(colors.background);
+    color: theme(colors.foreground);
+    font-family: theme(fontFamily.sans);
+  }
+}
