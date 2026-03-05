@@ -9,10 +9,10 @@ export function Hero() {
       </h1>
       <hr className="border-border mb-6" />
       <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-        Cloud Security Engineering
+        Senior Security Architect
       </h2>
       <p className="text-muted text-base max-w-2xl leading-relaxed mb-6">
-        Detection engines, governance platforms, and observability stacks across AWS, Azure &amp; GCP.
+        Enterprise security architecture across AWS, Azure, and GCP. Zero Trust design, cross-cloud identity federation, and security governance frameworks.
       </p>
       <span className="inline-block font-mono text-xs uppercase tracking-[0.2em] border border-accent text-accent px-3 py-1.5">
         Status: Available
