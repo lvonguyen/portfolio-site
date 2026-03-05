@@ -1,30 +1,36 @@
 # portfolio-site
 
-Static portfolio landing page for portfolio.lvonguyen.com
+Portfolio landing page at lvonguyen.com
 
 ## Stack
-- Single `index.html` with Tailwind CSS (CDN — no build step)
+- React 19 + Vite + TypeScript
+- Tailwind CSS v4 (Synthetic warm palette)
 - Cloudflare Pages deployment
-- Security headers via `public/_headers`
 
 ## Deployment
 - Platform: Cloudflare Pages
-- Project name: `portfolio-site`
-- Build: none (static HTML)
-- Output: repo root (`/`)
-- DNS: CNAME `portfolio` → `portfolio-site.pages.dev`
+- Project name: `portfolio-landing`
+- Build command: `npm run build`
+- Build output: `dist`
+- DNS: CNAME `@` (root) -> `portfolio-landing.pages.dev`
 
-## Updating Content
-Edit `index.html` directly. Project cards are `<article>` elements with consistent structure:
-- Status badge (emerald=Production, blue=Active, slate=Supporting)
-- Title + tier badge
-- Description paragraph
-- Tech badges (`.badge` class)
-- Links section
+## Development
 
-## Files
-```
-index.html          main page
-public/_headers     CF Pages security headers
-CLAUDE.md           this file
-```
+npm run dev    # local dev server
+npm run build  # production build
+
+## Design
+- Design doc: `docs/plans/2026-03-04-portfolio-v2-design.md`
+- Palette: Synthetic/Factory warm grays (T-100 through T-500) + amber accent (Y-100)
+- Typography: JetBrains Mono (headings/labels), Inter (body)
+
+## Components
+- `Nav.tsx` — minimal nav with initials + social links
+- `Hero.tsx` — name, title, tagline, status badge
+- `ProjectCard.tsx` — collapsible accordion card with icon, metadata, expanded content
+- `TechBadge.tsx` — tech stack pill
+- `ProjectIcons.tsx` — geometric SVG icons per project
+- `Footer.tsx` — copyright line
+
+## Project Data
+Edit `src/data/projects.ts` to add/update project cards.
