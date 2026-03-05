@@ -1,7 +1,11 @@
+import { Nav } from '@/components/Nav'
+import { Hero } from '@/components/Hero'
+
 function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <p className="p-8 font-mono text-2xl">Portfolio v2 — scaffold working</p>
+      <Nav />
+      <Hero />
     </div>
   )
 }
