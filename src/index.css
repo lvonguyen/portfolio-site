@@ -20,9 +20,62 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: theme(colors.background);
     color: theme(colors.foreground);
     font-family: theme(fontFamily.sans);
+  }
+
+  .dark {
+    --color-background: #1A1D1A;
+    --color-surface: #252A25;
+    --color-foreground: #E7E7E6;
+    --color-muted: #9B9588;
+    --color-border: #3D3B34;
+    --color-accent: #F5D288;
+    --color-t300: #6B6760;
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  nav, .dark-toggle {
+    display: none !important;
+  }
+
+  .print-expand {
+    grid-template-rows: 1fr !important;
+  }
+
+  .print-visible {
+    overflow: visible !important;
+  }
+
+  a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.75em;
+    color: #666;
+    word-break: break-all;
+  }
+
+  .no-print-link::after {
+    content: none !important;
   }
 }

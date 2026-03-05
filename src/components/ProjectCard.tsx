@@ -11,6 +11,19 @@ function GitHubIcon() {
   )
 }
 
+function ExternalLinkIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-3.5 h-3.5">
+      <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+    </svg>
+  )
+}
+
+const tierDescriptions: Record<string, string> = {
+  T1: 'Production-grade, fully featured',
+  T2: 'Working prototype',
+}
+
 function statusBadgeClass(status: Project['status'], tier: Project['tier']): string {
   if (status === 'live') return 'border border-green-600 text-green-700'
   if (tier === 'T1') return 'border border-accent text-accent'
@@ -41,6 +54,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
     e.stopPropagation()
   }
 
+  const showTooltip = project.status !== 'live'
+  const tooltipText = tierDescriptions[project.tier]
+
   return (
     <div
       role="button"
@@ -48,9 +64,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
       aria-expanded={expanded}
       onClick={toggle}
       onKeyDown={handleKeyDown}
-      className="border border-border bg-surface cursor-pointer select-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
+      className="border border-border bg-surface cursor-pointer select-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent transition-all duration-200 hover:border-accent/50 hover:-translate-y-0.5 hover:shadow-[0_2px_8px_rgba(0,0,0,0.08)]"
     >
-      {/* Collapsed header — always visible */}
+      {/* Collapsed header */}
       <div className="flex items-center gap-3 px-4 py-3">
         <div className="text-foreground shrink-0">
           <ProjectIcon name={project.icon} />
@@ -59,8 +75,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 flex-wrap">
             <span className="font-mono text-sm text-foreground">{project.name}</span>
-            <span className={`font-mono text-xs px-1.5 py-0.5 ${statusBadgeClass(project.status, project.tier)}`}>
-              {statusLabel(project.status, project.tier)}
+            <span className="relative group/tier">
+              <span
+                className={`font-mono text-xs px-1.5 py-0.5 ${statusBadgeClass(project.status, project.tier)}`}
+                title={showTooltip ? tooltipText : undefined}
+              >
+                {statusLabel(project.status, project.tier)}
+              </span>
+              {showTooltip && (
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 text-xs font-sans bg-foreground text-background whitespace-nowrap opacity-0 group-hover/tier:opacity-100 transition-opacity pointer-events-none z-10">
+                  {tooltipText}
+                  <span className="absolute top-full left-1/2 -translate-x-1/2 border-4 border-transparent border-t-foreground" />
+                </span>
+              )}
             </span>
           </div>
           <p className="text-xs text-muted mt-0.5 truncate">{project.tagline}</p>
@@ -79,12 +106,22 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Expandable content */}
       <div
-        className="grid transition-all duration-200"
+        className="grid transition-all duration-200 print-expand"
         style={{ gridTemplateRows: expanded ? '1fr' : '0fr' }}
       >
-        <div className="overflow-hidden">
+        <div className="overflow-hidden print-visible">
           <div className="px-4 pb-4 pt-1 border-t border-border">
             <p className="text-sm text-muted leading-relaxed mb-3">{project.description}</p>
+
+            {project.metrics && project.metrics.length > 0 && (
+              <div className="flex flex-wrap gap-3 mb-3">
+                {project.metrics.map((metric) => (
+                  <span key={metric} className="font-mono text-xs text-foreground bg-background px-2 py-1 border border-border">
+                    {metric}
+                  </span>
+                ))}
+              </div>
+            )}
 
             {project.techStack.length > 0 && (
               <div className="flex flex-wrap gap-1.5 mb-3">
@@ -94,16 +131,30 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </div>
             )}
 
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleLinkClick}
-              className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors"
-            >
-              <GitHubIcon />
-              <span className="font-mono">View on GitHub</span>
-            </a>
+            <div className="flex items-center gap-4">
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={handleLinkClick}
+                className="inline-flex items-center gap-1.5 text-xs text-muted hover:text-foreground transition-colors"
+              >
+                <GitHubIcon />
+                <span className="font-mono">View on GitHub</span>
+              </a>
+              {project.liveUrl && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleLinkClick}
+                  className="inline-flex items-center gap-1.5 text-xs text-accent hover:text-foreground transition-colors"
+                >
+                  <ExternalLinkIcon />
+                  <span className="font-mono">View Live</span>
+                </a>
+              )}
+            </div>
           </div>
         </div>
       </div>

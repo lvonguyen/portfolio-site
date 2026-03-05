@@ -4,13 +4,14 @@ export const projects: Project[] = [
   {
     id: 'cloudforge',
     name: 'CloudForge',
-    tagline: 'Cloud Governance Platform',
-    description: 'Enterprise cloud governance platform with OPA policy enforcement, AI-powered risk scoring, and multi-cloud drift detection. Aligns security controls with NIST, CIS, and ISO frameworks across 270+ cloud environments.',
+    tagline: 'Cloud Governance & Posture Platform',
+    description: 'Enterprise cloud governance platform with OPA policy enforcement, AI-powered contextual risk scoring, and multi-cloud drift detection. Normalizes CSPM findings across AWS Security Hub, Azure Defender, and GCP SCC into a unified priority model. Aligns security controls with NIST, CIS, and ISO frameworks across 3,000+ cloud environments.',
     tier: 'T1',
     status: 'active',
-    techStack: ['Go', 'React', 'OPA', 'Terraform', 'OpenTelemetry'],
+    techStack: ['Go', 'React', 'OPA', 'Terraform', 'Claude API', 'OpenTelemetry'],
     githubUrl: 'https://github.com/lvonguyen/cloudforge',
     icon: 'shield-gear',
+    metrics: ['40+ OPA Policies', '3 CSPMs Unified', '3,000+ Environments'],
   },
   {
     id: 'threatforge',
@@ -22,6 +23,7 @@ export const projects: Project[] = [
     techStack: ['Go', 'Kafka', 'Redis', 'Sigma Rules', 'Splunk HEC'],
     githubUrl: 'https://github.com/lvonguyen/threatforge',
     icon: 'radar',
+    metrics: ['10K Events/sec', '200+ Sigma Rules', 'Sub-ms Alerting'],
   },
   {
     id: 'mco',
@@ -33,16 +35,6 @@ export const projects: Project[] = [
     techStack: ['Go', 'OpenTelemetry', 'Prometheus', 'Grafana', 'Loki'],
     githubUrl: 'https://github.com/lvonguyen/multi-cloud-observability',
     icon: 'telescope',
-  },
-  {
-    id: 'cspm',
-    name: 'CSPM Aggregator',
-    tagline: 'Security Posture Scoring',
-    description: 'Cross-cloud CSPM normalization with AI-powered contextual risk scoring. Correlates findings across AWS Security Hub, Azure Defender, and GCP SCC into a unified priority model enabling risk-based remediation.',
-    tier: 'T2',
-    status: 'supporting',
-    techStack: ['Go', 'Claude API', 'AWS', 'Azure', 'GCP'],
-    githubUrl: 'https://github.com/lvonguyen/cspm-aggregator',
-    icon: 'layers',
+    metrics: ['3-Cloud Unified', '50+ Dashboards', 'Real-time Metrics'],
   },
 ]

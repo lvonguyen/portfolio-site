@@ -11,4 +11,6 @@ export interface Project {
   techStack: string[]
   githubUrl: string
   icon: string
+  metrics?: string[]
+  liveUrl?: string
 }

@@ -5,14 +5,9 @@ export function Footer() {
         <p className="font-mono text-xs text-t300 uppercase tracking-wider">
           vonguyen.io / cloud security / {new Date().getFullYear()}
         </p>
-        <a
-          href="https://github.com/lvonguyen"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-mono text-xs text-t300 hover:text-foreground transition-colors"
-        >
-          github.com/lvonguyen
-        </a>
+        <p className="font-mono text-xs text-t300">
+          Built with React + Vite
+        </p>
       </div>
     </footer>
   )
