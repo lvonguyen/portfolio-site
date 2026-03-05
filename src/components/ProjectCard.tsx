@@ -48,7 +48,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       aria-expanded={expanded}
       onClick={toggle}
       onKeyDown={handleKeyDown}
-      className="border border-border bg-surface cursor-pointer select-none focus:outline-none focus-visible:ring-1 focus-visible:ring-accent"
+      className="border border-border bg-surface cursor-pointer select-none focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-accent"
     >
       {/* Collapsed header — always visible */}
       <div className="flex items-center gap-3 px-4 py-3">
