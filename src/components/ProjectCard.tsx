@@ -2,6 +2,15 @@ import { useState } from 'react'
 import type { Project } from '@/types'
 import { TechBadge } from '@/components/TechBadge'
 import { ProjectIcon } from '@/components/ProjectIcons'
+import { DiagramViewer } from '@/components/DiagramViewer'
+
+function ExpandIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+    </svg>
+  )
+}
 
 function GitHubIcon() {
   return (
@@ -41,6 +50,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const [expanded, setExpanded] = useState(false)
+  const [diagramOpen, setDiagramOpen] = useState(false)
 
   function toggle() {
     setExpanded((prev) => !prev)
@@ -112,6 +122,34 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="overflow-hidden print-visible">
           <div className="px-4 pb-4 pt-1 border-t border-border">
             <p className="text-sm text-muted leading-relaxed mb-3">{project.description}</p>
+
+            {project.diagramUrl && (
+              <div
+                role="button"
+                tabIndex={0}
+                aria-label={`Expand ${project.name} architecture diagram`}
+                onClick={(e) => { e.stopPropagation(); setDiagramOpen(true) }}
+                onKeyDown={(e) => { if (e.key === 'Enter') { e.stopPropagation(); setDiagramOpen(true) } }}
+                className="mb-3 border border-border bg-background p-2 relative group/diagram cursor-zoom-in hover:border-accent/50 transition-colors"
+              >
+                <img
+                  src={project.diagramUrl}
+                  alt={`${project.name} architecture diagram`}
+                  className="w-full h-auto"
+                  loading="lazy"
+                />
+                <span className="absolute top-3 right-3 p-1.5 bg-foreground/70 text-background opacity-0 group-hover/diagram:opacity-100 transition-opacity">
+                  <ExpandIcon />
+                </span>
+              </div>
+            )}
+            {diagramOpen && project.diagramUrl && (
+              <DiagramViewer
+                src={project.diagramUrl}
+                alt={`${project.name} architecture diagram`}
+                onClose={() => setDiagramOpen(false)}
+              />
+            )}
 
             {project.metrics && project.metrics.length > 0 && (
               <div className="flex flex-wrap gap-3 mb-3">

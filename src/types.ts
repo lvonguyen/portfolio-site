@@ -13,4 +13,5 @@ export interface Project {
   icon: string
   metrics?: string[]
   liveUrl?: string
+  diagramUrl?: string
 }

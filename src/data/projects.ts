@@ -11,6 +11,7 @@ export const projects: Project[] = [
     techStack: ['Go', 'React', 'OPA', 'Terraform', 'Claude API', 'OpenTelemetry'],
     githubUrl: 'https://github.com/lvonguyen/cloudforge',
     liveUrl: 'https://cloudforge-demo.lvonguyen.com',
+    diagramUrl: '/cloudforge-architecture.svg',
     icon: 'shield-gear',
     metrics: ['40+ OPA Policies', '3 CSPMs Unified', '3,000+ Environments'],
   },

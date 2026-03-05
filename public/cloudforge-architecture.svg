@@ -1,0 +1,439 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620">
+  <style>
+    text { font-family: 'Inter', system-ui, sans-serif; fill: #1F2822; }
+    .title { font-size: 20px; font-weight: 700; }
+    .subtitle { font-size: 11px; fill: #4E4A3E; }
+    .layer-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; }
+    .box-label { font-size: 11px; font-weight: 600; }
+    .box-detail { font-size: 9px; fill: #4E4A3E; }
+    .version { font-size: 9px; fill: #B8B19C; }
+    .arrow-down { stroke: #B8B19C; stroke-width: 1; stroke-dasharray: 4,3; fill: none; }
+  </style>
+
+  <defs>
+    <!-- Shield (CSPM / Security) -->
+    <symbol id="i-shield" viewBox="0 0 14 14">
+      <path d="M7 1L2.5 3.2v3.3c0 3 1.9 5.3 4.5 6.5 2.6-1.2 4.5-3.5 4.5-6.5V3.2L7 1z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.9"/>
+      <path d="M5.5 7l1.2 1.5L9 6" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Network Graph (AI / Governance) -->
+    <symbol id="i-network" viewBox="0 0 14 14">
+      <circle cx="7" cy="3" r="1.8" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.8"/>
+      <circle cx="3" cy="10.5" r="1.8" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.8"/>
+      <circle cx="11" cy="10.5" r="1.8" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.8"/>
+      <line x1="7" y1="4.8" x2="3.8" y2="8.8" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="7" y1="4.8" x2="10.2" y2="8.8" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="4.8" y1="10.5" x2="9.2" y2="10.5" stroke="currentColor" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- Checklist (Compliance) -->
+    <symbol id="i-checklist" viewBox="0 0 14 14">
+      <rect x="2" y="1" width="10" height="12" rx="1" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="0.8"/>
+      <line x1="5.5" y1="4.5" x2="10" y2="4.5" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="5.5" y1="7" x2="10" y2="7" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="5.5" y1="9.5" x2="9" y2="9.5" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M3.2 4l.8.8L5.2 3.5" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3.2 6.5l.8.8L5.2 6" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M3.2 9l.8.8L5.2 8.5" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- Bar Chart (FinOps) -->
+    <symbol id="i-chart" viewBox="0 0 14 14">
+      <rect x="1.5" y="8" width="2.5" height="4.5" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="0.6"/>
+      <rect x="5.5" y="5" width="2.5" height="7.5" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="0.6"/>
+      <rect x="9.5" y="2" width="2.5" height="10.5" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="0.6"/>
+      <line x1="1" y1="13" x2="13" y2="13" stroke="currentColor" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- Wrench + Key (Remediation) -->
+    <symbol id="i-wrench" viewBox="0 0 14 14">
+      <path d="M9.5 1.5c-1.5 0-2.8.9-3.3 2.2L2 7.8l-.5.5v2.2l.5.5h2.2l.5-.5 4.1-4.1c1.3-.5 2.2-1.8 2.2-3.3 0-.3 0-.5-.1-.8L9.2 4 8 4l-1-1 .5-1.3c-.3-.1-.6-.2-1-.2z" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/>
+    </symbol>
+
+    <!-- React Atom -->
+    <symbol id="i-react" viewBox="0 0 14 14">
+      <ellipse cx="7" cy="7" rx="5.5" ry="2" fill="none" stroke="currentColor" stroke-width="0.7" transform="rotate(0 7 7)"/>
+      <ellipse cx="7" cy="7" rx="5.5" ry="2" fill="none" stroke="currentColor" stroke-width="0.7" transform="rotate(60 7 7)"/>
+      <ellipse cx="7" cy="7" rx="5.5" ry="2" fill="none" stroke="currentColor" stroke-width="0.7" transform="rotate(120 7 7)"/>
+      <circle cx="7" cy="7" r="1" fill="currentColor"/>
+    </symbol>
+
+    <!-- Cloud (generic cloud provider) -->
+    <symbol id="i-cloud" viewBox="0 0 16 12">
+      <path d="M12.5 5.5A4 4 0 005 4a3.5 3.5 0 00.5 7h7a3 3 0 000-6z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- AWS Brand (orange smile) -->
+    <symbol id="i-aws" viewBox="0 28 48 12">
+      <path d="M43.396 32.412c-5.253 3.88-12.883 5.939-19.445 5.939-9.195 0-17.48-3.4-23.738-9.052-.495-.447-.048-1.053.543-.702 6.768 3.927 15.118 6.306 23.754 6.306 5.827 0 12.229-1.214 18.12-3.704.877-.4 1.628.575.766 1.213z" fill="#F90"/>
+      <path d="M45.583 29.922c-.67-.862-4.438-.415-6.147-.208-.51.064-.59-.383-.127-.718 3.001-2.107 7.934-1.5 8.509-.798.574.718-.16 5.651-2.97 8.014-.43.367-.846.175-.654-.304.638-1.58 2.06-5.14 1.389-5.986z" fill="#F90"/>
+    </symbol>
+
+    <!-- Azure Brand -->
+    <symbol id="i-azure" viewBox="0 0 48 48">
+      <path fill="#0078d4" d="M36.642 30.689H14.118a1.042 1.042 0 0 0-.712 1.805L27.88 46.003a2.275 2.275 0 0 0 1.552.611h12.754z"/>
+      <path fill="#0078d4" d="M33.338 6.544h26.038l-27.03 80.087a4.152 4.152 0 0 1-3.933 2.824H8.149a4.145 4.145 0 0 1-3.928-5.47L29.404 9.368a4.152 4.152 0 0 1 3.934-2.825z" transform="translate(-2.184 -2.184) scale(.5455)"/>
+      <path fill="#2892DF" d="M66.595 9.364a4.145 4.145 0 0 0-3.928-2.82H33.648a4.146 4.146 0 0 1 3.928 2.82l25.184 74.62a4.146 4.146 0 0 1-3.928 5.472h29.02a4.146 4.146 0 0 0 3.927-5.472z" transform="translate(-2.184 -2.184) scale(.5455)"/>
+    </symbol>
+
+    <!-- GCP Brand (4-color cloud) -->
+    <symbol id="i-gcp" viewBox="0 0 48 48">
+      <g transform="translate(-1.53 4.474) scale(1.464)">
+        <path d="M21.85 7.41h1l2.85-2.85.14-1.21A12.81 12.81 0 0 0 5 9.6a1.55 1.55 0 0 1 1-.06l5.7-.94s.29-.48.44-.45a7.11 7.11 0 0 1 9.73-.74z" fill="#EA4335"/>
+        <path d="M29.76 9.6a12.84 12.84 0 0 0-3.87-6.24l-4 4A7.11 7.11 0 0 1 24.5 13v.71a3.56 3.56 0 1 1 0 7.12h-7.12l-.71.72v4.27l.71.71h7.12A9.26 9.26 0 0 0 29.76 9.6z" fill="#4285F4"/>
+        <path d="M10.25 26.49h7.12v-5.7h-7.12a3.54 3.54 0 0 1-1.47-.32l-1 .31-2.87 2.85-.25 1a9.21 9.21 0 0 0 5.59 1.86z" fill="#34A853"/>
+        <path d="M10.25 8a9.26 9.26 0 0 0-5.59 16.6l4.13-4.13a3.56 3.56 0 1 1 4.71-4.71l4.13-4.13A9.25 9.25 0 0 0 10.25 8z" fill="#FBBC05"/>
+      </g>
+    </symbol>
+
+    <!-- Kubernetes Wheel -->
+    <symbol id="i-k8s" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="5.5" fill="#326CE5" fill-opacity="0.1" stroke="#326CE5" stroke-width="0.7"/>
+      <circle cx="7" cy="7" r="1.5" fill="none" stroke="#326CE5" stroke-width="0.7"/>
+      <line x1="7" y1="1.5" x2="7" y2="5.5" stroke="#326CE5" stroke-width="0.6"/>
+      <line x1="7" y1="8.5" x2="7" y2="12.5" stroke="#326CE5" stroke-width="0.6"/>
+      <line x1="1.8" y1="4.3" x2="5.6" y2="6.2" stroke="#326CE5" stroke-width="0.6"/>
+      <line x1="8.4" y1="7.8" x2="12.2" y2="9.7" stroke="#326CE5" stroke-width="0.6"/>
+      <line x1="1.8" y1="9.7" x2="5.6" y2="7.8" stroke="#326CE5" stroke-width="0.6"/>
+      <line x1="8.4" y1="6.2" x2="12.2" y2="4.3" stroke="#326CE5" stroke-width="0.6"/>
+    </symbol>
+
+    <!-- ServiceNow Brand (green Now symbol) -->
+    <symbol id="i-servicenow" viewBox="494 28 80 72">
+      <path fill="#62D84E" fill-rule="evenodd" d="M533.9,30.1c-21.7,0-39.3,17.5-39.3,39.1c0,10.8,4.4,21.2,12.3,28.6c2.8,2.6,7,2.9,10.1,0.5c9.9-7.4,23.5-7.4,33.4,0c3.1,2.3,7.4,2.1,10.1-0.6c15.7-14.9,16.4-39.7,1.5-55.5C554.6,34.6,544.5,30.2,533.9,30.1 M533.7,88.9c-10.5,0.3-19.2-8-19.5-18.5c0-0.3,0-0.7,0-1c0-10.8,8.7-19.5,19.5-19.5s19.5,8.7,19.5,19.5c0.3,10.5-8,19.2-18.5,19.5C534.3,88.9,534,88.9,533.7,88.9"/>
+    </symbol>
+
+    <!-- Terraform Brand -->
+    <symbol id="i-terraform" viewBox="0 0 48 48">
+      <g transform="translate(-17.23 -7.394) scale(.33796)">
+        <path d="M102.58 91.75V46.91l38.83 22.42v44.83z" fill="#7B42BC" fill-rule="evenodd"/>
+        <path d="M184.5 46.91l-38.83 22.42v44.83l38.83-22.41z" fill="#7B42BC" fill-rule="evenodd"/>
+        <path d="M98.33 44.3L59.5 21.88v44.84l38.83 22.42z" fill="#7B42BC" fill-rule="evenodd"/>
+        <path d="M141.41 163.91v-44.83l-38.83-22.42v44.83z" fill="#7B42BC" fill-rule="evenodd"/>
+      </g>
+    </symbol>
+
+    <!-- Archer Brand (angular arrow mark) -->
+    <symbol id="i-archer" viewBox="0 0 72.3 48.1">
+      <polygon points="0,48.1 26.6,21.2 48.3,48.1" fill="#043673"/>
+      <polygon points="72.3,24 48.3,0 0,0 48.3,48.1" fill="#15BEF0"/>
+    </symbol>
+
+    <!-- Sparkle (AI generic) -->
+    <symbol id="i-sparkle" viewBox="0 0 14 14">
+      <path d="M7 1l1.2 4.8L13 7l-4.8 1.2L7 13l-1.2-4.8L1 7l4.8-1.2z" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- Anthropic Brand (A mark) -->
+    <symbol id="i-anthropic" viewBox="0 0 48 48">
+      <path fill="#D97757" d="M34.609 7.082h-7.344l13.392 33.837H48z"/>
+      <path fill="#D97757" d="M13.392 7.082 0 40.919h7.488l2.74-7.106h14.01l2.739 7.106h7.488L21.073 7.082zm-.743 20.447 4.583-11.892 4.583 11.892z"/>
+    </symbol>
+
+    <!-- Database (PostgreSQL/Redis) -->
+    <symbol id="i-db" viewBox="0 0 14 14">
+      <ellipse cx="7" cy="3.5" rx="5" ry="2" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M2 3.5v7c0 1.1 2.2 2 5 2s5-.9 5-2v-7" fill="none" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M2 7c0 1.1 2.2 2 5 2s5-.9 5-2" fill="none" stroke="currentColor" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- Lock (Key Vault) -->
+    <symbol id="i-lock" viewBox="0 0 14 14">
+      <rect x="3" y="6" width="8" height="6.5" rx="1" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M5 6V4.5a2 2 0 014 0V6" fill="none" stroke="currentColor" stroke-width="0.8"/>
+      <circle cx="7" cy="9.5" r="1" fill="currentColor"/>
+    </symbol>
+
+    <!-- Policy/OPA Shield -->
+    <symbol id="i-policy" viewBox="0 0 14 14">
+      <path d="M7 1L2.5 3.2v3.3c0 3 1.9 5.3 4.5 6.5 2.6-1.2 4.5-3.5 4.5-6.5V3.2L7 1z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="0.8"/>
+      <line x1="5" y1="5.5" x2="9" y2="5.5" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="5" y1="7.5" x2="9" y2="7.5" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="5" y1="9.5" x2="8" y2="9.5" stroke="currentColor" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- Grid/Layout (Dashboard) -->
+    <symbol id="i-grid" viewBox="0 0 14 14">
+      <rect x="1" y="1" width="5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="0.7"/>
+      <rect x="8" y="1" width="5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="0.7"/>
+      <rect x="1" y="8" width="5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="0.7"/>
+      <rect x="8" y="8" width="5" height="5" rx="0.5" fill="currentColor" fill-opacity="0.2" stroke="currentColor" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- Monitor/Terminal (Operator) -->
+    <symbol id="i-monitor" viewBox="0 0 14 14">
+      <rect x="1" y="1.5" width="12" height="8" rx="0.8" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="5" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+      <line x1="7" y1="9.5" x2="7" y2="12" stroke="currentColor" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- Person (Self-Service) -->
+    <symbol id="i-user" viewBox="0 0 14 14">
+      <circle cx="7" cy="4" r="2.5" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M2.5 13c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="0.7"/>
+    </symbol>
+
+    <!-- Globe (Region) -->
+    <symbol id="i-globe" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="5.5" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width="0.7"/>
+      <ellipse cx="7" cy="7" rx="2.5" ry="5.5" fill="none" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="1.5" y1="5" x2="12.5" y2="5" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="1.5" y1="9" x2="12.5" y2="9" stroke="currentColor" stroke-width="0.5"/>
+    </symbol>
+
+    <!-- Dollar (Cost) -->
+    <symbol id="i-dollar" viewBox="0 0 14 14">
+      <circle cx="7" cy="7" r="5.5" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M7 3v8M5.2 5c0-.8.8-1.4 1.8-1.4s1.8.6 1.8 1.4-.8 1.4-1.8 1.4-1.8.6-1.8 1.4.8 1.4 1.8 1.4 1.8-.6 1.8-1.4" fill="none" stroke="currentColor" stroke-width="0.8"/>
+    </symbol>
+
+    <!-- Mesh/Network (Network Policies) -->
+    <symbol id="i-mesh" viewBox="0 0 14 14">
+      <circle cx="3" cy="3" r="1.5" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.6"/>
+      <circle cx="11" cy="3" r="1.5" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.6"/>
+      <circle cx="3" cy="11" r="1.5" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.6"/>
+      <circle cx="11" cy="11" r="1.5" fill="currentColor" fill-opacity="0.15" stroke="currentColor" stroke-width="0.6"/>
+      <line x1="4.5" y1="3" x2="9.5" y2="3" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="4.5" y1="11" x2="9.5" y2="11" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="3" y1="4.5" x2="3" y2="9.5" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="11" y1="4.5" x2="11" y2="9.5" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="4.2" y1="4.2" x2="9.8" y2="9.8" stroke="currentColor" stroke-width="0.4"/>
+      <line x1="9.8" y1="4.2" x2="4.2" y2="9.8" stroke="currentColor" stroke-width="0.4"/>
+    </symbol>
+
+    <!-- Warning/Exception -->
+    <symbol id="i-alert" viewBox="0 0 14 14">
+      <path d="M7 1.5L1 12.5h12L7 1.5z" fill="currentColor" fill-opacity="0.12" stroke="currentColor" stroke-width="0.8" stroke-linejoin="round"/>
+      <line x1="7" y1="5.5" x2="7" y2="8.5" stroke="currentColor" stroke-width="0.9" stroke-linecap="round"/>
+      <circle cx="7" cy="10.2" r="0.7" fill="currentColor"/>
+    </symbol>
+
+    <!-- Cron (clock + schedule) -->
+    <symbol id="i-cron" viewBox="0 0 48 48">
+      <path d="M23.4 14.66v10.79l9.93 5.73M33.44 43.32c-2.94 1.44-6.17 2.18-9.44 2.18C12.13 45.5 2.5 35.87 2.5 24S12.13 2.5 24 2.5 45.5 12.13 45.5 24c0 3.27-.74 6.49-2.18 9.43" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M36 37h5M36 40h5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="38.5" cy="38.5" r="7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- Document (Reports) -->
+    <symbol id="i-doc" viewBox="0 0 14 14">
+      <path d="M3 1h5.5L12 4.5V13H3z" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="0.7"/>
+      <path d="M8.5 1v3.5H12" fill="none" stroke="currentColor" stroke-width="0.7"/>
+      <line x1="5" y1="7" x2="10" y2="7" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="5" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="0.5"/>
+      <line x1="5" y1="11" x2="8" y2="11" stroke="currentColor" stroke-width="0.5"/>
+    </symbol>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="620" fill="#FAFAF8"/>
+
+  <!-- Title -->
+  <text x="600" y="36" text-anchor="middle" class="title">CloudForge — High-Level Architecture</text>
+  <text x="600" y="52" text-anchor="middle" class="subtitle">Enterprise Cloud Governance &amp; Posture Platform</text>
+
+  <!-- ROW 1: Portal Layer -->
+  <rect x="40" y="70" width="1120" height="72" fill="#3B82F6" fill-opacity="0.08" stroke="#3B82F6" stroke-width="1"/>
+  <use href="#i-react" x="48" y="79" width="14" height="14" color="#3B82F6"/>
+  <text x="66" y="88" class="layer-label" fill="#3B82F6">Portal Layer</text>
+  <text x="66" y="102" class="box-detail">React 19 + TypeScript — Role-based views with Cloudflare Access</text>
+
+  <rect x="56" y="110" width="150" height="24" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="0.5"/>
+  <use href="#i-grid" x="75" y="117" width="10" height="10" color="#1e40af"/>
+  <text x="138" y="126" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">Admin Dashboard</text>
+
+  <rect x="216" y="110" width="170" height="24" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="0.5"/>
+  <use href="#i-monitor" x="222" y="117" width="10" height="10" color="#1e40af"/>
+  <text x="310" y="126" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">Operator Command Center</text>
+
+  <rect x="396" y="110" width="150" height="24" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="0.5"/>
+  <use href="#i-user" x="410" y="117" width="10" height="10" color="#1e40af"/>
+  <text x="478" y="126" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">Self-Service Portal</text>
+
+  <rect x="556" y="110" width="130" height="24" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="0.5"/>
+  <use href="#i-chart" x="566" y="117" width="10" height="10" color="#1e40af"/>
+  <text x="628" y="126" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">FinOps Dashboard</text>
+
+  <rect x="696" y="110" width="140" height="24" fill="#3B82F6" fill-opacity="0.15" stroke="#3B82F6" stroke-width="0.5"/>
+  <use href="#i-doc" x="710" y="117" width="10" height="10" color="#1e40af"/>
+  <text x="774" y="126" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">Compliance Reports</text>
+
+  <!-- API Gateway bar -->
+  <rect x="40" y="152" width="1120" height="28" fill="#1F2822" fill-opacity="0.06" stroke="#1F2822" stroke-opacity="0.2" stroke-width="1"/>
+  <text x="600" y="170" text-anchor="middle" font-size="10" font-weight="600" fill="#4E4A3E">API Gateway — JWT Auth · Rate Limiting (Redis) · Security Headers · TLS 1.2+</text>
+
+  <!-- ROW 2: Core Services -->
+  <rect x="40" y="192" width="1120" height="190" fill="#F5D288" fill-opacity="0.08" stroke="#D4A843" stroke-width="1"/>
+  <text x="56" y="210" class="layer-label" fill="#8B7424">Core Services</text>
+
+  <!-- CSPM -->
+  <rect x="56" y="220" width="200" height="150" fill="white" stroke="#B8B19C" stroke-width="1"/>
+  <rect x="56" y="220" width="200" height="22" fill="#ef4444" fill-opacity="0.1"/>
+  <use href="#i-shield" x="96" y="223" width="14" height="14" color="#B91C1C"/>
+  <text x="164" y="235" text-anchor="middle" class="box-label" fill="#B91C1C">CSPM Aggregator</text>
+  <text x="66" y="254" class="box-detail">Normalizer — Common schema</text>
+  <text x="66" y="268" class="box-detail">Delta Detection — Drift tracking</text>
+  <text x="66" y="282" class="box-detail">Risk Scorer — AI-powered (Claude)</text>
+  <text x="66" y="296" class="box-detail">Complexity — Tier classification</text>
+  <text x="66" y="310" class="box-detail">Priority Matrix — P1-P5 + SLA</text>
+  <text x="66" y="324" class="box-detail">Threat Intel — EPSS + CISA KEV</text>
+  <text x="66" y="350" class="box-detail" fill="#B8B19C">3 CSPs · 21 finding classes · 52 edge cases</text>
+
+  <!-- AI Governance -->
+  <rect x="270" y="220" width="200" height="150" fill="white" stroke="#B8B19C" stroke-width="1"/>
+  <rect x="270" y="220" width="200" height="22" fill="#7c3aed" fill-opacity="0.1"/>
+  <use href="#i-network" x="314" y="223" width="14" height="14" color="#6D28D9"/>
+  <text x="378" y="235" text-anchor="middle" class="box-label" fill="#6D28D9">AI Governance</text>
+  <text x="280" y="254" class="box-detail">Agent Registry — Inventory + lifecycle</text>
+  <text x="280" y="268" class="box-detail">Embedded OPA — Policy evaluation</text>
+  <text x="280" y="282" class="box-detail">STRIDE + ATLAS — Threat models</text>
+  <text x="280" y="296" class="box-detail">Maturity Assessment — Scoring</text>
+  <text x="280" y="310" class="box-detail">Data Flow Controls — PII tracking</text>
+  <text x="280" y="324" class="box-detail">Tool Access Policies — Least privilege</text>
+  <text x="280" y="350" class="box-detail" fill="#B8B19C">2 threat models · Embedded engine</text>
+
+  <!-- Compliance -->
+  <rect x="484" y="220" width="200" height="150" fill="white" stroke="#B8B19C" stroke-width="1"/>
+  <rect x="484" y="220" width="200" height="22" fill="#1e40af" fill-opacity="0.1"/>
+  <use href="#i-checklist" x="524" y="223" width="14" height="14" color="#1E40AF"/>
+  <text x="600" y="235" text-anchor="middle" class="box-label" fill="#1E40AF">Compliance Engine</text>
+  <text x="494" y="254" class="box-detail">Framework Mapping — NIST/CIS/ISO</text>
+  <text x="494" y="268" class="box-detail">Automotive — ISO 21434 / UNECE</text>
+  <text x="494" y="282" class="box-detail">Government — FedRAMP / ITAR</text>
+  <text x="494" y="296" class="box-detail">Sector — HIPAA / PCI / SOX</text>
+  <text x="494" y="310" class="box-detail">Deduplication — Cross-framework</text>
+  <text x="494" y="324" class="box-detail">AI Analyzer — Gap identification</text>
+  <text x="494" y="350" class="box-detail" fill="#B8B19C">20+ frameworks · AI-powered analysis</text>
+
+  <!-- FinOps -->
+  <rect x="698" y="220" width="200" height="150" fill="white" stroke="#B8B19C" stroke-width="1"/>
+  <rect x="698" y="220" width="200" height="22" fill="#22c55e" fill-opacity="0.1"/>
+  <use href="#i-chart" x="734" y="223" width="14" height="14" color="#166534"/>
+  <text x="806" y="235" text-anchor="middle" class="box-label" fill="#166534">FinOps Platform</text>
+  <text x="708" y="254" class="box-detail">Anomaly Detection — Spend alerts</text>
+  <text x="708" y="268" class="box-detail">Chargeback — Cost allocation</text>
+  <text x="708" y="282" class="box-detail">Forecasting — Trend analysis</text>
+  <text x="708" y="296" class="box-detail">Cost Explorer — Multi-cloud view</text>
+  <text x="708" y="310" class="box-detail">Billing APIs — AWS/Azure/GCP</text>
+  <text x="708" y="350" class="box-detail" fill="#B8B19C">12 accounts · $47K/yr savings found</text>
+
+  <!-- Remediation + Identity -->
+  <rect x="912" y="220" width="236" height="150" fill="white" stroke="#B8B19C" stroke-width="1"/>
+  <rect x="912" y="220" width="236" height="22" fill="#f59e0b" fill-opacity="0.1"/>
+  <use href="#i-wrench" x="958" y="223" width="14" height="14" color="#92400E"/>
+  <text x="1044" y="235" text-anchor="middle" class="box-label" fill="#92400E">Remediation + Identity</text>
+  <text x="922" y="254" class="box-detail">Dispatcher — Auto-remediation</text>
+  <text x="922" y="268" class="box-detail">Dry Run Preview — Safe validation</text>
+  <text x="922" y="282" class="box-detail">Rollback — State recovery</text>
+  <text x="922" y="296" class="box-detail">Entra ID + Okta — Identity federation</text>
+  <text x="922" y="310" class="box-detail">Zero Trust — Conditional access</text>
+  <text x="922" y="324" class="box-detail">CI/CD — Checkov · SonarQube · Veracode</text>
+  <text x="922" y="350" class="box-detail" fill="#B8B19C">3 SAST providers · Auto-rollback</text>
+
+  <!-- ROW 3: Policy + AI + Integrations -->
+  <rect x="40" y="394" width="540" height="68" fill="#1e40af" fill-opacity="0.06" stroke="#1e40af" stroke-width="1"/>
+  <use href="#i-policy" x="48" y="400" width="12" height="12" color="#1e40af"/>
+  <text x="64" y="412" class="layer-label" fill="#1e40af">Policy Engine — Dual OPA (REST + Embedded)</text>
+  <rect x="56" y="420" width="118" height="22" fill="#1e40af" fill-opacity="0.1" stroke="#1e40af" stroke-width="0.5"/>
+  <use href="#i-globe" x="70" y="426" width="10" height="10" color="#1e40af"/>
+  <text x="122" y="435" text-anchor="middle" class="box-detail" fill="#1e40af" font-weight="500">Region Policies</text>
+  <rect x="182" y="420" width="100" height="22" fill="#1e40af" fill-opacity="0.1" stroke="#1e40af" stroke-width="0.5"/>
+  <use href="#i-dollar" x="196" y="426" width="10" height="10" color="#1e40af"/>
+  <text x="240" y="435" text-anchor="middle" class="box-detail" fill="#1e40af" font-weight="500">Cost Policies</text>
+  <rect x="290" y="420" width="110" height="22" fill="#1e40af" fill-opacity="0.1" stroke="#1e40af" stroke-width="0.5"/>
+  <use href="#i-mesh" x="294" y="426" width="10" height="10" color="#1e40af"/>
+  <text x="350" y="435" text-anchor="middle" class="box-detail" fill="#1e40af" font-weight="500">Network Policies</text>
+  <rect x="408" y="420" width="120" height="22" fill="#1e40af" fill-opacity="0.1" stroke="#1e40af" stroke-width="0.5"/>
+  <use href="#i-alert" x="412" y="426" width="10" height="10" color="#1e40af"/>
+  <text x="473" y="435" text-anchor="middle" class="box-detail" fill="#1e40af" font-weight="500">Exception Validator</text>
+
+  <rect x="600" y="394" width="264" height="68" fill="#7c3aed" fill-opacity="0.06" stroke="#7c3aed" stroke-width="1"/>
+  <use href="#i-sparkle" x="608" y="400" width="12" height="12" color="#6D28D9"/>
+  <text x="624" y="412" class="layer-label" fill="#6D28D9">AI Providers</text>
+  <rect x="616" y="420" width="72" height="22" fill="#7c3aed" fill-opacity="0.1" stroke="#7c3aed" stroke-width="0.5"/>
+  <use href="#i-anthropic" x="620" y="425" width="12" height="12"/>
+  <text x="657" y="435" text-anchor="middle" class="box-detail" fill="#6D28D9" font-weight="500">Anthropic</text>
+  <rect x="696" y="420" width="72" height="22" fill="#7c3aed" fill-opacity="0.1" stroke="#7c3aed" stroke-width="0.5"/>
+  <use href="#i-aws" x="694" y="426" width="14" height="8"/>
+  <text x="738" y="435" text-anchor="middle" class="box-detail" fill="#6D28D9" font-weight="500">Bedrock</text>
+  <rect x="776" y="420" width="72" height="22" fill="#7c3aed" fill-opacity="0.1" stroke="#7c3aed" stroke-width="0.5"/>
+  <use href="#i-gcp" x="780" y="425" width="12" height="12"/>
+  <text x="818" y="435" text-anchor="middle" class="box-detail" fill="#6D28D9" font-weight="500">Vertex AI</text>
+
+  <rect x="880" y="394" width="280" height="68" fill="#22c55e" fill-opacity="0.06" stroke="#22c55e" stroke-width="1"/>
+  <text x="896" y="412" class="layer-label" fill="#166534">Integrations</text>
+  <rect x="896" y="420" width="80" height="22" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="0.5"/>
+  <use href="#i-servicenow" x="900" y="424" width="12" height="12"/>
+  <text x="942" y="435" text-anchor="middle" class="box-detail" fill="#166534" font-weight="500">ServiceNow</text>
+  <rect x="984" y="420" width="60" height="22" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="0.5"/>
+  <use href="#i-archer" x="988" y="425" width="14" height="10"/>
+  <text x="1020" y="435" text-anchor="middle" class="box-detail" fill="#166534" font-weight="500">Archer</text>
+  <rect x="1052" y="420" width="72" height="22" fill="#22c55e" fill-opacity="0.1" stroke="#22c55e" stroke-width="0.5"/>
+  <use href="#i-terraform" x="1056" y="425" width="12" height="12"/>
+  <text x="1094" y="435" text-anchor="middle" class="box-detail" fill="#166534" font-weight="500">Terraform</text>
+
+  <!-- ROW 4: Cloud + Infra -->
+  <rect x="40" y="474" width="540" height="68" fill="white" stroke="#B8B19C" stroke-width="1"/>
+  <use href="#i-cloud" x="48" y="481" width="14" height="10" color="#4E4A3E"/>
+  <text x="66" y="492" class="layer-label" fill="#4E4A3E">Cloud Providers — 3,000+ Environments</text>
+
+  <rect x="56" y="500" width="160" height="30" fill="#f59e0b" fill-opacity="0.08" stroke="#f59e0b" stroke-width="0.5"/>
+  <use href="#i-aws" x="100" y="506" width="22" height="7"/>
+  <text x="136" y="515" text-anchor="middle" font-size="10" font-weight="600" fill="#92400E">AWS</text>
+  <text x="136" y="526" text-anchor="middle" class="box-detail" fill="#92400E">Security Hub · GuardDuty</text>
+
+  <rect x="228" y="500" width="160" height="30" fill="#3b82f6" fill-opacity="0.08" stroke="#3b82f6" stroke-width="0.5"/>
+  <use href="#i-azure" x="276" y="503" width="14" height="14"/>
+  <text x="308" y="515" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">Azure</text>
+  <text x="308" y="526" text-anchor="middle" class="box-detail" fill="#1e40af">Defender · Entra ID</text>
+
+  <rect x="400" y="500" width="160" height="30" fill="#22c55e" fill-opacity="0.08" stroke="#22c55e" stroke-width="0.5"/>
+  <use href="#i-gcp" x="450" y="503" width="14" height="14"/>
+  <text x="480" y="515" text-anchor="middle" font-size="10" font-weight="600" fill="#166534">GCP</text>
+  <text x="480" y="526" text-anchor="middle" class="box-detail" fill="#166534">Security Command Center</text>
+
+  <rect x="600" y="474" width="560" height="68" fill="#1F2822" fill-opacity="0.04" stroke="#1F2822" stroke-opacity="0.2" stroke-width="1"/>
+  <use href="#i-k8s" x="608" y="479" width="14" height="14" color="#326CE5"/>
+  <text x="626" y="492" class="layer-label" fill="#4E4A3E">Infrastructure — Azure Kubernetes Service</text>
+  <rect x="616" y="500" width="82" height="30" fill="white" stroke="#B8B19C" stroke-width="0.5"/>
+  <use href="#i-cron" x="630" y="505" width="10" height="10" color="#4E4A3E"/>
+  <text x="662" y="514" text-anchor="middle" class="box-detail" font-weight="500">CronJob</text>
+  <text x="657" y="526" text-anchor="middle" class="box-detail">Scheduling</text>
+  <rect x="706" y="500" width="82" height="30" fill="white" stroke="#B8B19C" stroke-width="0.5"/>
+  <use href="#i-shield" x="708" y="505" width="10" height="10" color="#4E4A3E"/>
+  <text x="752" y="514" text-anchor="middle" class="box-detail" font-weight="500">Pod Security</text>
+  <text x="747" y="526" text-anchor="middle" class="box-detail">Non-root</text>
+  <rect x="796" y="500" width="82" height="30" fill="white" stroke="#B8B19C" stroke-width="0.5"/>
+  <use href="#i-lock" x="806" y="505" width="10" height="10" color="#4E4A3E"/>
+  <text x="842" y="514" text-anchor="middle" class="box-detail" font-weight="500">Key Vault</text>
+  <text x="837" y="526" text-anchor="middle" class="box-detail">Secrets</text>
+  <rect x="886" y="500" width="82" height="30" fill="white" stroke="#B8B19C" stroke-width="0.5"/>
+  <use href="#i-db" x="890" y="505" width="10" height="10" color="#4E4A3E"/>
+  <text x="932" y="514" text-anchor="middle" class="box-detail" font-weight="500">PostgreSQL</text>
+  <text x="927" y="526" text-anchor="middle" class="box-detail">State store</text>
+  <rect x="976" y="500" width="82" height="30" fill="white" stroke="#B8B19C" stroke-width="0.5"/>
+  <use href="#i-db" x="992" y="505" width="10" height="10" color="#EF4444"/>
+  <text x="1022" y="514" text-anchor="middle" class="box-detail" font-weight="500">Redis</text>
+  <text x="1017" y="526" text-anchor="middle" class="box-detail">Rate limits</text>
+  <rect x="1066" y="500" width="82" height="30" fill="white" stroke="#B8B19C" stroke-width="0.5"/>
+  <use href="#i-policy" x="1074" y="505" width="10" height="10" color="#4E4A3E"/>
+  <text x="1112" y="514" text-anchor="middle" class="box-detail" font-weight="500">Net Policy</text>
+  <text x="1107" y="526" text-anchor="middle" class="box-detail">Egress only</text>
+
+  <!-- Tech Stack Bar -->
+  <rect x="40" y="556" width="1120" height="26" fill="#1F2822" fill-opacity="0.03" stroke="#B8B19C" stroke-width="0.5"/>
+  <text x="600" y="573" text-anchor="middle" font-family="monospace" font-size="10" fill="#4E4A3E" letter-spacing="0.03em">Go 1.25 · React 19 · OPA/Rego · Terraform · Claude API (opus-4-6) · OpenTelemetry · gRPC · Kafka</text>
+
+  <!-- Connection lines -->
+  <line x1="131" y1="134" x2="131" y2="152" class="arrow-down"/>
+  <line x1="301" y1="134" x2="301" y2="152" class="arrow-down"/>
+  <line x1="471" y1="134" x2="471" y2="152" class="arrow-down"/>
+  <line x1="156" y1="370" x2="156" y2="394" class="arrow-down"/>
+  <line x1="370" y1="370" x2="370" y2="394" class="arrow-down"/>
+  <line x1="370" y1="370" x2="732" y2="394" class="arrow-down"/>
+  <line x1="310" y1="462" x2="310" y2="474" class="arrow-down"/>
+
+  <!-- Version -->
+  <text x="1148" y="600" text-anchor="end" class="version">CloudForge HLD v2.1 — 2026-03</text>
+</svg>
