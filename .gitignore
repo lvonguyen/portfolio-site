@@ -10,3 +10,10 @@ dist/
 
 # TypeScript build info
 *.tsbuildinfo
+
+# AI config symlinks (machine-specific, deployed by setup.sh)
+.agent/
+.claude/
+.continue/
+.cursorrules
+.github/copilot-instructions.md

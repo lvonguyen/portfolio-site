@@ -9,7 +9,7 @@ const keywords = [
   'Enterprise Platform Security',
 ]
 
-function useTypingEffect(words: string[], typeSpeed = 80, deleteSpeed = 40, pause = 2000) {
+function useTypingEffect(words: string[], typeSpeed = 80, deleteSpeed = 40, pause = 3500) {
   const [index, setIndex] = useState(0)
   const [text, setText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
