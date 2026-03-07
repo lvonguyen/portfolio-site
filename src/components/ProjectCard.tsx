@@ -35,7 +35,7 @@ const tierDescriptions: Record<string, string> = {
 
 function statusBadgeClass(status: Project['status'], tier: Project['tier']): string {
   if (status === 'live') return 'border border-green-600 text-green-700'
-  if (tier === 'T1') return 'border border-[#D4A843] text-[#8B7424] dark:border-accent dark:text-accent'
+  if (tier === 'T1') return 'border border-[#D4A843] text-[#5F4F16] dark:border-accent dark:text-accent'
   return 'border border-border text-muted'
 }
 
@@ -186,7 +186,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={handleLinkClick}
-                  className="inline-flex items-center gap-1.5 text-xs text-[#8B7424] dark:text-accent hover:text-foreground transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs text-[#5F4F16] dark:text-accent hover:text-foreground transition-colors"
                 >
                   <ExternalLinkIcon />
                   <span className="font-mono">View Live</span>

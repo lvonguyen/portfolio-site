@@ -3,7 +3,7 @@
 @theme {
   --color-t100: #E7E7E6;
   --color-t200: #CFCBBF;
-  --color-t300: #B8B19C;
+  --color-t300: #6B6558;
   --color-t400: #4E4A3E;
   --color-t500: #1F2822;
   --color-y100: #F5D288;
@@ -37,7 +37,7 @@
     --color-muted: #9B9588;
     --color-border: #3D3B34;
     --color-accent: #F5D288;
-    --color-t300: #6B6760;
+    --color-t300: #8A8478;
   }
 }
 
