@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: 'cloudforge',
     name: 'CloudForge',
     tagline: 'Cloud Governance & Security Platform',
-    description: 'Enterprise cloud governance platform with integrated CSPM pipeline, AI-powered contextual risk scoring (STRIDE+ATLAS), and FinOps cost optimization. Normalizes findings across AWS Security Hub, Azure Defender, and GCP SCC into a unified priority model. Includes OPA policy enforcement, anomaly detection, chargeback allocation, container security scanning, WAF golden templates, and workflow orchestration.',
+    description: 'Reference architecture demonstrating enterprise security patterns across identity, infrastructure, governance, and SDLC — built end-to-end, not just designed. Integrates CSPM aggregation (SecurityHub, Defender, SCC), AI-powered risk scoring, tiered remediation dispatch, ServiceNow GRC workflows, zero trust policy engine, and FinOps cost optimization. Backed by STRIDE threat models, 14 ADRs with trade-off analysis, and a layered CI/CD security pipeline (SAST, SBOM, container scanning).',
     tier: 'T1',
     status: 'active',
     techStack: ['Go', 'React', 'OPA', 'Terraform', 'Claude API', 'OpenTelemetry'],
