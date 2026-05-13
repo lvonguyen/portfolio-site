@@ -18,3 +18,9 @@ dist/
 .cursorrules
 .github/copilot-instructions.md
 docs/STANDARDS.md
+.serena/
+.playwright-mcp/
+.playwright-cli/
+coverage/
+playwright-report/
+test-results/
